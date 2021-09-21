@@ -1,0 +1,10 @@
+{% extends 'default/template.html' %}
+{% block body %}
+
+    <h1>Welcome, {{ request.user.first_name }}</h1>
+
+    <ul>
+        <li>Username: {{ request.user.username }}</li>
+        <li>Email: {{ request.user.email }}</li>
+    </ul>
+    {% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'default/template.html' %}
+{% block body %}
+<h1>Register</h1>
+<br>
+<br>
+<div class="form-group">
+    <form method = "POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+    
+    <button type="submit">Register</button>
+</form>
+</div>
+
+{% endblock %}

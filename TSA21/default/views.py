@@ -23,12 +23,12 @@ def register(request):
     return render(request, "default/register.html", {'form': form})
 
 def index(request):
-    return render(request, "default/index.html", {})
- 
-def main(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
-    return render(request, "default/user.html")
+    return render(request, "default/index.html")
+ 
+
+    
 def loginuser(request):
     if request.method == "POST":
         username = request.POST["username"]
@@ -36,9 +36,9 @@ def loginuser(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("main"))
+            return HttpResponseRedirect(reverse("index"))
         else:
-            return render(request, "default/login.html", {
+            return render(request, "default/index.html", {
                 "message": "Invalid credentials."
             })
     return render(request, "default/login.html")

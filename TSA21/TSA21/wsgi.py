@@ -14,6 +14,6 @@ sys.path.append('/Documents/DjangoTSA21/TSA21/default')
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "TSA21.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", 'TSA21.settings')
 
 application = get_wsgi_application()

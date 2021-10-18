@@ -8,6 +8,9 @@ https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 """
 
 import os
+import sys
+sys.path.append('/Documents/DjangoTSA21/TSA21')
+sys.path.append('/Documents/DjangoTSA21/TSA21/default')
 
 from django.core.wsgi import get_wsgi_application
 

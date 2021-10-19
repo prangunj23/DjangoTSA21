@@ -1,1 +1,0 @@
-web: gunicorn TSA21.wsgi

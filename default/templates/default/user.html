@@ -1,12 +1,9 @@
 {% extends 'default/template.html' %}
 {% block body %}
 
-    <h1>Welcome, {{ request.user.first_name }}</h1>
+    <h1>Welcome, {{ request.user.username }}</h1>
 
-    <ul>
-        <li>Username: {{ request.user.username }}</li>
-        <li>Email: {{ request.user.email }}</li>
-    </ul>
+    <p>We hope you enjoy this virtual event.</p>
 
     <a href= "{% url 'logout' %}">Log Out</a>
     {% endblock %}

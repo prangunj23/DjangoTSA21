@@ -1,10 +1,9 @@
 {% extends 'default/template.html' %}
     {% block header %}
-    {% if request.user.is_authenticated %}
-      <li class="nav-item">
-        <a class="nav-link" href="https://medicomm.org/contacts/">{{ request.user.username }}</a>
-      </li>
-    {% endif %}
+    {% csrf_token %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'user' %}">{{ user.username }}</a>
+        </li>
     {% endblock %}
     {% block body %}
     <body>

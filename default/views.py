@@ -23,8 +23,6 @@ def register(request):
     return render(request, "default/register.html", {'form': form})
 
 def index(request):
-    if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse("login"))
     return render(request, "default/index.html")
  
 

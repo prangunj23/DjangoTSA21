@@ -7,3 +7,7 @@ Notes
 - Admin
  - User: pranit
  - Password: password
+- Testing Users
+ - Users: bill, jim
+ - Password: 12e45678, 0ct0pus123
+

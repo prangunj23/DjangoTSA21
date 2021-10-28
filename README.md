@@ -8,6 +8,6 @@ Notes
  - User: pranit
  - Password: password
 - Testing Users
- - Users: bill, jim
- - Password: 12e45678, 0ct0pus123
+ - Users: test1, test2
+ - Password: laoo,rpe23, aPassWord23
 

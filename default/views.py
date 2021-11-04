@@ -51,4 +51,5 @@ def user(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
     return render(request, "default/user.html")
-
+def event(request):
+    pass

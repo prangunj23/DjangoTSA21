@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout 
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -18,15 +18,15 @@ def register(request):
             return redirect('login')
 
     else:
-        
+
             form = UserCreationForm()
     return render(request, "default/register.html", {'form': form})
 
 def index(request):
     return render(request, "default/index.html")
- 
 
-    
+
+
 def loginuser(request):
     if request.method == "POST":
         username = request.POST["username"]
@@ -34,8 +34,8 @@ def loginuser(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("index")) 
-            
+            return HttpResponseRedirect(reverse("index"))
+
         else:
             return render(request, "default/index.html", {
                 "message": "Invalid credentials."
@@ -51,5 +51,13 @@ def user(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
     return render(request, "default/user.html")
+
 def event(request):
-    pass
+    if request.user.is_authenticated:
+        return render(request, "default/login.html", {
+        "message": Please Log In
+        })
+        if request.method == "POST":
+            useremail = request.POST["email"]
+            userdate = request.POST["date"]
+            event = Event(username=request.user, email=useremail, date=userdate)

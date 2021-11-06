@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import Event
-
+import datetime
 
 # Create your views here.
 def register(request):
@@ -64,7 +64,11 @@ def event(request):
             event.save()
             newevent = Event.objects.filter(username_id=request.user.id)
             return render(request, "default/displayevent.html", {
-                "Event": newevent[0]
+                "username": newevent[0].username.username,
+                "email": newevent[0].email,
+                "month": newevent[0].date.strftime("%B"),
+                "year": newevent[0].date.strftime("%Y"),
+                "day": newevent[0].date.strftime("%d")
             })
         else:
             return HttpResponseRedirect(reverse("loginevent"))

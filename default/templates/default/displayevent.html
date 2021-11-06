@@ -1,6 +1,6 @@
 {% extends 'default/template.html' %} 
 {% block body %}
- <h1>Username: {{ Event.username.username }}</h1>
- <p>Email: {{ Event.email }}</p>
- <p>Date: {{ Event.date.strftime("%B") }} </p>   
+ <h1>Username: {{ username }}</h1>
+ <p>Email: {{ email }}</p>
+ <p>Date: {{ month }} {{ day }}, {{ year }} </p>   
  {% endblock %}

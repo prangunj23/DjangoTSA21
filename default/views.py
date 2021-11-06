@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from .models import Event
 
 
 # Create your views here.
@@ -52,12 +53,22 @@ def user(request):
         return HttpResponseRedirect(reverse("login"))
     return render(request, "default/user.html")
 
+def loginevent(request):
+    return render(request, "default/eventlogin.html")
 def event(request):
     if request.user.is_authenticated:
-        return render(request, "default/login.html", {
-        "message": Please Log In
-        })
         if request.method == "POST":
-            useremail = request.POST["email"]
-            userdate = request.POST["date"]
+            useremail = request.POST["useremail"]
+            userdate = request.POST["userdate"]
             event = Event(username=request.user, email=useremail, date=userdate)
+            event.save()
+            newevent = Event.objects.filter(username_id=request.user.id)
+            return render(request, "default/displayevent.html", {
+                "Event": newevent[0]
+            })
+        else:
+            return HttpResponseRedirect(reverse("loginevent"))
+    else:
+        return render(request, "default/login.html", {
+        "message": "Please Log In"
+        })

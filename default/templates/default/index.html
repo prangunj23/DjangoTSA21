@@ -1,16 +1,4 @@
 {% extends 'default/template.html' %}
-    {% block header %}
-    {% csrf_token %}
-    {% if request.user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'user' %}">{{ user.username }}</a>
-        </li>
-    {% else %} 
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">Login</a>
-        </li>
-    {% endif %}
-    {% endblock %}
     {% block body %}
     <body>
     <!-- Hero Section -->

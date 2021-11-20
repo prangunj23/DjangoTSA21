@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import Event
+from .models import Event, element, DIFFICULTY
 import datetime
 
 # Create your views here.
@@ -54,21 +54,27 @@ def user(request):
     return render(request, "default/user.html")
 
 def loginevent(request):
-    return render(request, "default/eventlogin.html")
+     
+    return render(request, "default/eventlogin.html", {
+        "difficulty": element
+    })
 def event(request):
     if request.user.is_authenticated:
         if request.method == "POST":
             useremail = request.POST["useremail"]
-            userdate = request.POST["userdate"]
-            event = Event(username=request.user, email=useremail, date=userdate)
+            userdifficulty = request.POST["userdifficulty"]
+            event = Event(username=request.user, email=useremail, difficulty=userdifficulty)
             event.save()
+            if Event.objects.filter(username=request.user).exists(): 
+                existing = True
+            else:
+                existing = False
             newevent = Event.objects.filter(username_id=request.user.id)
             return render(request, "default/displayevent.html", {
                 "username": newevent[0].username.username,
                 "email": newevent[0].email,
-                "month": newevent[0].date.strftime("%B"),
-                "year": newevent[0].date.strftime("%Y"),
-                "day": newevent[0].date.strftime("%d")
+                "difficulty": newevent[0].difficulty,
+                "existing": existing
             })
         else:
             return HttpResponseRedirect(reverse("loginevent"))

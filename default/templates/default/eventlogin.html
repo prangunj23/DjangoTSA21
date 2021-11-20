@@ -6,7 +6,11 @@
 <form action="{% url 'event' %}" method = "post">
     {% csrf_token %} 
     <input type="text" name="useremail" placeholder="Email">
-    <input type="date" name="userdate">
+    <select name="userdifficulty">
+    {% for x in difficulty %}
+        <option name="{{ x }}">{{ x }}</option>
+    {% endfor %}
+</select>
     <input type="submit" value="submit">
 </form>
 {% endblock %}

@@ -82,3 +82,6 @@ def event(request):
         return render(request, "default/login.html", {
         "message": "Please Log In"
         })
+  
+ def puzzles(request):
+        return render(request, "default/puzzles.html")

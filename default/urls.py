@@ -10,5 +10,6 @@ urlpatterns = [
     path('logout', views.logoutuser, name='logout'),
     path('user', views.user, name="user"),
     path('event', views.event, name="event"),
-    path('loginevent', views.loginevent, name="loginevent")
+    path('loginevent', views.loginevent, name="loginevent"),
+    path('puzzles', views.puzzles, name="puzzles")
 ]

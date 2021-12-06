@@ -66,7 +66,14 @@ def loginevent(request):
 def event(request):
     if request.user.is_authenticated:
         if request.method == "POST":
+            global useremail
             useremail = request.POST["useremail"]
+            at = '@'
+            if not at in useremail:
+                return render(request, "default/eventlogin.html", {
+                    "correctEmail": "Please input a correct email"
+                })
+            
             userdifficulty = request.POST["userdifficulty"]
             event = Event(username=request.user, email=useremail, difficulty=userdifficulty)
             event.save()

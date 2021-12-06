@@ -6,6 +6,9 @@ from django.urls import reverse
 from .models import Event, element, DIFFICULTY
 import datetime
 
+global newevent 
+newevent = Event.objects.filter(username_id=request.user.id)
+
 # Create your views here.
 def register(request):
     if request.method == 'POST':
@@ -51,7 +54,11 @@ def logoutuser(request):
 def user(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
-    return render(request, "default/user.html")
+    return render(request, "default/user.html", {
+        "username": newevent[0].username.username,
+        "email": newevent[0].email,
+        "difficulty": newevent[0].difficulty
+    })
 
 def loginevent(request):
      
@@ -69,7 +76,7 @@ def event(request):
                 existing = True
             else:
                 existing = False
-            newevent = Event.objects.filter(username_id=request.user.id)
+            
             return render(request, "default/displayevent.html", {
                 "username": newevent[0].username.username,
                 "email": newevent[0].email,

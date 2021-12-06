@@ -6,8 +6,6 @@ from django.urls import reverse
 from .models import Event, element, DIFFICULTY
 import datetime
 
-global newevent 
-newevent = Event.objects.filter(username_id=request.user.id)
 
 # Create your views here.
 def register(request):
@@ -76,7 +74,8 @@ def event(request):
                 existing = True
             else:
                 existing = False
-            
+            global newevent 
+            newevent = Event.objects.filter(username_id=request.user.id)
             return render(request, "default/displayevent.html", {
                 "username": newevent[0].username.username,
                 "email": newevent[0].email,

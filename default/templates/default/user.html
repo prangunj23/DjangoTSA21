@@ -3,7 +3,8 @@
 
     <h1>Welcome, {{ request.user.username }}</h1>
 
-    <p>We</p>
+    <p>You have currently registered for the {{ difficulty }} level. We have provided for you <a href="{% url 'Resources' %}">here</a> resources based on your level as well
+        as a study <a href="{% url 'study' %}">here</a>.</p>
 
     <a href= "{% url 'logout' %}">Log Out</a>
-    {% endblock %}
+{% endblock %}

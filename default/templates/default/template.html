@@ -67,7 +67,7 @@
             {% if not existing %}
             <!--- Event -->
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'loginevent' %}">Event</a>
+              <a class="nav-link" href="{% url 'loginevent' %}">Study</a>
             </li>
             {% else %}
             {% endif %}
@@ -129,10 +129,10 @@
                 <a href="https://medicomm.org/about/" class="footerlink">About</a>
               </li>
               <li class="footerlink">
-                <a href="https://medicomm.org/products/" class="footerlink">Products</a>
+                <a href="{% url 'loginevent' %}" class="footerlink">Study</a>
               </li>
               <li class="footerlink">
-                <a href="https://medicomm.org/Services/" class="footerlink">Services</a>
+                <a href="{% url 'puzzles' %}"class="footerlink">Puzzles</a>
               </li>
               <li class="footerlink">
                 <a href="https://medicomm.org/Covid-19/" class="footerlink">Covid-19</a>
@@ -197,7 +197,7 @@
   <!-- Typed.js (animated typing effect) -->
   <script>
     var typed = new Typed(".element", {
-      strings: ["medical telecommunications and equipment production."],
+      strings: ["between chess and the internet."],
       typeSpeed: 40,
       loop: false,
     });

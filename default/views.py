@@ -51,7 +51,8 @@ def logoutuser(request):
     })
 def user(request):
     if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse("login"))
+        return HttpResponseRedirect(reverse("login"))   
+    newevent = Event.objects.filter(username=request.user)
     return render(request, "default/user.html", {
         "username": newevent[0].username.username,
         "email": newevent[0].email,
@@ -59,19 +60,19 @@ def user(request):
     })
 
 def loginevent(request):
-     
-    return render(request, "default/eventlogin.html", {
+     return render(request, "default/eventlogin.html", {
         "difficulty": element
     })
 def event(request):
     if request.user.is_authenticated:
         if request.method == "POST":
-            global useremail
+            
             useremail = request.POST["useremail"]
             at = '@'
             if not at in useremail:
                 return render(request, "default/eventlogin.html", {
-                    "correctEmail": "Please input a correct email"
+                    "difficulty": element,
+                    "message": "Please input a correct email"
                 })
             
             userdifficulty = request.POST["userdifficulty"]
@@ -81,7 +82,7 @@ def event(request):
                 existing = True
             else:
                 existing = False
-            global newevent 
+            
             newevent = Event.objects.filter(username_id=request.user.id)
             return render(request, "default/displayevent.html", {
                 "username": newevent[0].username.username,
@@ -95,6 +96,14 @@ def event(request):
         return render(request, "default/login.html", {
         "message": "Please Log In"
         })
-  
+def updatediff(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            userdifficulty = request.POST["useremail"]
+            entry = Event.objects.get(username=request.user.username)
+            entry.difficulty = userdifficulty
+            entry.save()
+            return HttpResponseRedirect(reverse("event"))
+
 def puzzles(request):
         return render(request, "default/puzzles.html")

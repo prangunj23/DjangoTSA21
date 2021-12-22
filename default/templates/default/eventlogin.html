@@ -1,16 +1,20 @@
 {% extends 'default/template.html' %}
 {% block body %}
-{% if message %} 
+{% if message %}
     <div>{{ message }}</div>
-{% endif %} 
+{% endif %}
+<div class="box">
 <form action="{% url 'event' %}" method = "post">
-    {% csrf_token %} 
-    
-    <select name="userdifficulty">
+
+    {% csrf_token %}
+    <input type="text" class="name" name="useremail" placeholder="Email">
+    <select class="name" name="userdifficulty">
+
     {% for x in difficulty %}
         <option name="{{ x }}">{{ x }}</option>
     {% endfor %}
 </select>
-    <input type="submit" value="submit">
+    <button type="submit">Submit</button>
 </form>
+</div>
 {% endblock %}

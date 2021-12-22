@@ -340,12 +340,12 @@ body {
   line-height: 53px;
   vertical-align: middle;
 }
-  
+
 .endingblock {
     display: block;
     height: 5%;
   }
-  
+
   .phraseinline {
     display: inline-block !important;
   }
@@ -357,7 +357,7 @@ body {
   display: inline;
   color: #3755be;
 }
-  
+
  .svgarrow {
     display: flex;
     justify-content: center;
@@ -382,7 +382,7 @@ body {
 .custom-shape-divider-top-1613079776 .shape-fill {
   fill: #fafafa;
 }
-  
+
 .testimonials-section {
   font-family: "Inter", sans-serif;
   height: auto;
@@ -419,15 +419,15 @@ body {
   background-color: #fff !important;
   color: black !important;
 }
-  .fromwho {     
+  .fromwho {
   font-weight: 600;
   color: #3755be !important;
   }
-  
+
   .fromwhosize {
     font-size: 13px;
   }
-  
+
   .customb {
     border-radius: 10px !important;
   }
@@ -565,16 +565,16 @@ body {
       .fa {
           padding: 10px;
          font-size: 30px;
-        
+
          text-align: center;
       }
-      
+
       .fa:hover {
         text-decoration: none;
         color: white;
         opacity: 0.5;
       }
-      
+
       .fa-facebook {
           display: inline-flex;
     align-items: center;
@@ -587,7 +587,7 @@ body {
         font-size: 26px;
         color: white;
       }
-      
+
       .fa-instagram {
          display: inline-flex;
     align-items: center;
@@ -597,11 +597,11 @@ body {
     border-radius: 50%; /* or 50% */
      background-color: #8a3ab9;
     width: auto;
-        
+
         background-color: #8a3ab9;
         color: white;
       }
-    
+
 .salutations {
   display: inline-block;
   height: 8%;
@@ -798,14 +798,14 @@ body {
     overflow-x: hidden;
   }
 }
-@media (max-width: 442px) {  
+@media (max-width: 442px) {
   .panelsheader {
     font-size: 26px;
     height: auto;
     width: auto;
   }
  }
-  
+
 @media (max-width: 415px) {
   .herocontent {
     height: 150px;

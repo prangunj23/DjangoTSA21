@@ -12,5 +12,11 @@ urlpatterns = [
     path('event', views.event, name="event"),
     path('loginevent', views.loginevent, name="loginevent"),
     path('puzzles', views.puzzles, name="puzzles"),
+    path('contact', views.contact, name="contact"),
+    path('about', views.about, name="about"),
+    path('sources', views.sources, name="sources"),
+    path('contact', views.contact, name="contact"),
+    path('press', views.press, name="press"),
+    path('es', views.es, name="es"),
     path('updatedifficulty', views.updatediff, name="update")
 ]

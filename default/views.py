@@ -5,6 +5,9 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import Event, element, DIFFICULTY
 import datetime
+from django.http import request
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 # Create your views here.
@@ -27,7 +30,20 @@ def register(request):
 def index(request):
     return render(request, "default/index.html")
 
+def about(request):
+    return render(request, "default/about.html")
 
+def sources(request):
+    return render(request, "default/sources.html")
+
+def contact(request):
+    return render(request, "default/contact.html")
+
+def press(request):
+    return render(request, "default/press.html")
+
+def es(request):
+    return render(request, "default/es.html")
 
 def loginuser(request):
     if request.method == "POST":
@@ -60,7 +76,7 @@ def user(request):
     })
 
 def loginevent(request):
-     return render(request, "default/eventlogin.html", {
+    return render(request, "default/eventlogin.html", {
         "difficulty": element
     })
 def event(request):
@@ -74,15 +90,15 @@ def event(request):
                     "difficulty": element,
                     "message": "Please input a correct email"
                 })
-            
+
             userdifficulty = request.POST["userdifficulty"]
             event = Event(username=request.user, email=useremail, difficulty=userdifficulty)
             event.save()
-            if Event.objects.filter(username=request.user).exists(): 
+            if Event.objects.filter(username=request.user).exists():
                 existing = True
             else:
                 existing = False
-            
+
             newevent = Event.objects.filter(username_id=request.user.id)
             return render(request, "default/displayevent.html", {
                 "username": newevent[0].username.username,
@@ -96,6 +112,7 @@ def event(request):
         return render(request, "default/login.html", {
         "message": "Please Log In"
         })
+
 def updatediff(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
@@ -105,5 +122,27 @@ def updatediff(request):
             entry.save()
             return HttpResponseRedirect(reverse("event"))
 
+
 def puzzles(request):
         return render(request, "default/puzzles.html")
+
+
+def contact(request):
+    if request.method == "POST":
+        message_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+        message = request.POST['message']
+        msg_mail = str(message) + "\n\nFrom:" + str(message_name)
+
+        send_mail(
+            str(message_email),
+            msg_mail,
+            message_email,
+            [settings.EMAIL_HOST_USER],
+            fail_silently=False
+        )
+        return render(request, 'default/contact.html', {'message_name': message_name,
+                                              'message_email': message_email,
+                                              'message': message})
+    else:
+        return render(request, 'default/contact.html', {})

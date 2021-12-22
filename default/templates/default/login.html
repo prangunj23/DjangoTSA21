@@ -4,11 +4,13 @@
     {% if message %}
         <div>{{ message }} </div>
         {% endif %}
+<div class="box">
 <form action="{% url 'login' %}" method = "post">
     {% csrf_token %}
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <input type="submit" value="login">
+    <input type="text" class="name" name="username" placeholder="Username">
+    <input type="password" class="" name="password" placeholder="Password">
+    <button type="submit">Login</button>
 </form>
 <a href="{% url 'register' %}">Register</a>
+</div>
 {% endblock %}

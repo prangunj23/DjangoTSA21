@@ -5,9 +5,11 @@
 {% endif %}
 <div class="box">
 <form action="{% url 'event' %}" method = "post">
+
     {% csrf_token %}
     <input type="text" class="name" name="useremail" placeholder="Email">
     <select class="name" name="userdifficulty">
+
     {% for x in difficulty %}
         <option name="{{ x }}">{{ x }}</option>
     {% endfor %}

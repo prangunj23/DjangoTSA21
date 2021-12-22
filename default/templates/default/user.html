@@ -2,9 +2,15 @@
 {% block body %}
 
     <h1>Welcome, {{ request.user.username }}</h1>
-
-    <p>You have currently registered for the {{ difficulty }} level. We have provided for you <a href="{% url 'Resources' %}">here</a> resources based on your level as well
-        as a study <a href="{% url 'study' %}">here</a>.</p>
+    <form action="{% url 'event' %}" method = "post">
+        {% csrf_token %} 
+        <select name="userdifficulty">
+        {% for x in difficulty %}
+            <option name="{{ x }}">{{ x }}</option>
+        {% endfor %}
+    </select>
+        <input type="submit" value="submit">
+    </form>
 
     <a href= "{% url 'logout' %}">Log Out</a>
 {% endblock %}

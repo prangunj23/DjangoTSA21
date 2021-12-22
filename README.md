@@ -10,4 +10,6 @@ Notes
 - Testing Users
  - Users: test1, test2
  - Password: laoo,rpe23, aPassWord23
+ - Email: virchess123@gmail.com
+ - Password: 0ct0pus!23
 

@@ -66,14 +66,16 @@ def logoutuser(request):
         "message": "Logged out."
     })
 def user(request):
-    if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse("login"))   
-    newevent = Event.objects.filter(username=request.user)
-    return render(request, "default/user.html", {
-        "username": newevent[0].username.username,
-        "email": newevent[0].email,
-        "difficulty": newevent[0].difficulty
-    })
+    if request.user.is_authenticated:
+        if Event.objects.filter(username=request.user).exists():
+            return render(request, "default/user.html", {
+                "difficulty": element
+            })
+        else:
+            return HttpResponseRedirect(reverse("loginevent"))
+
+    else:
+        return HttpResponseRedirect("login")
 
 def loginevent(request):
     return render(request, "default/eventlogin.html", {
@@ -94,17 +96,11 @@ def event(request):
             userdifficulty = request.POST["userdifficulty"]
             event = Event(username=request.user, email=useremail, difficulty=userdifficulty)
             event.save()
-            if Event.objects.filter(username=request.user).exists():
-                existing = True
-            else:
-                existing = False
-
             newevent = Event.objects.filter(username_id=request.user.id)
             return render(request, "default/displayevent.html", {
                 "username": newevent[0].username.username,
                 "email": newevent[0].email,
                 "difficulty": newevent[0].difficulty,
-                "existing": existing
             })
         else:
             return HttpResponseRedirect(reverse("loginevent"))
@@ -116,11 +112,16 @@ def event(request):
 def updatediff(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
-            userdifficulty = request.POST["useremail"]
-            entry = Event.objects.get(username=request.user.username)
+            userdifficulty = request.POST["userdifficulty"]
+            entry = Event.objects.get(username=request.user)
             entry.difficulty = userdifficulty
             entry.save()
-            return HttpResponseRedirect(reverse("event"))
+            newevent = Event.objects.filter(username_id=request.user.id)
+            return render(request, "default/displayevent.html", {
+                "username": newevent[0].username.username,
+                "email": newevent[0].email,
+                "difficulty": newevent[0].difficulty,
+            })
 
 
 def puzzles(request):

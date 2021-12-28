@@ -47,7 +47,7 @@
     <!--Navigation bar-->
     <nav class="nav-menu-top navbar navbar-expand-lg navbar-light bg-white">
       <div class="ml-auto">
-        <a class="navbar-brand" href="https://medicomm.org"><img src="{% static 'default/assets/images/medicomm-logo.png' %}" width="" height="53.5" class="d-inline-block align-top" alt="Medicomm Nav Logo" /></a>
+        <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'default/assets/images/medicomm-logo.png' %}" width="" height="53.5" class="d-inline-block align-top" alt="Medicomm Nav Logo" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -110,7 +110,7 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col">
-            <a href="http://medicomm.org/">
+            <a href="{% url 'index' %}">
               <img src="{% static 'default/assets/images/medicomm-logo.png' %}" alt="Medicomm Logo" class="mb-3 footerimg" />
             </a>
             <p><strong>Medicomm</strong> is a medical telecommunications company dedicated to producing medical utilities and equipment for all companies, big or small! Join or partner with us today</p>
@@ -146,11 +146,11 @@
               </li>
 
               <li class="footerlink">
-                <a href="https://medicomm.org/press/" class="footerlink">Press</a>
+                <a href="{% url 'press' %}" class="footerlink">Press</a>
               </li>
 
               <li class="footerlink">
-                <a href="https://medicomm.org/es/" class="footerlink">Español</a>
+                <a href="{% url 'es' %}" class="footerlink">Español</a>
               </li>
             </ul>
           </div>

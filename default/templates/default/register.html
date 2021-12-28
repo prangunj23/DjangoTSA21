@@ -1,14 +1,15 @@
 {% extends 'default/template.html' %}
 {% block body %}
-<h1>Register</h1>
 
-<div class="box">
+<div class="box"><center>
     <form method = "POST">
+      <h1>Register</h1>
+      <br>
         {% csrf_token %}
         {{ form.as_p }}
 
     <button type="submit">Register</button>
 </form>
-</div>
+</center></div>
 
 {% endblock %}

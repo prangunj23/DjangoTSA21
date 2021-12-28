@@ -2,7 +2,7 @@
 {% block body %}
 
     <h1>Welcome, {{ request.user.username }}</h1>
-    <form action="{% url 'event' %}" method = "post">
+    <form action="{% url 'update' %}" method = "post">
         {% csrf_token %} 
         <select name="userdifficulty">
         {% for x in difficulty %}

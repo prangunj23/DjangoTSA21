@@ -1,14 +1,15 @@
 {% extends 'default/template.html' %}
     {% block body %}
       <body>
-        <div class="box">
+        <div class="box"><center>
           <form method="post">
+            <h1>Contact Us</h1>
             {% csrf_token %}
             <input type="text" name="message-name" class="name" placeholder="Please enter your Name">
             <input type="email" name="message-email"class="email" placeholder="Please enter your Email">
             <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter a message"></textarea>
             <button type="submit">Submit</button>
           </form>
-        </div>
+        </center></div>
       </body>
     {% endblock %}

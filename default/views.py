@@ -84,7 +84,7 @@ def loginevent(request):
 def event(request):
     if request.user.is_authenticated:
         if request.method == "POST":
-            
+
             useremail = request.POST["useremail"]
             at = '@'
             if not at in useremail:

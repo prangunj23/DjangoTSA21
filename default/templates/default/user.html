@@ -1,22 +1,14 @@
 {% extends 'default/template.html' %}
 {% block body %}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
     <div class=".box"><center>
-
     <form action="{% url 'event' %}" method = "post">
       <h1>Welcome, {{ request.user.username }}</h1>
         {% csrf_token %}
         <select class="name" name="userdifficulty">
-=======
-=======
->>>>>>> 9da7af767d677d797a61882bce8117499de33a61
     <h1>Welcome, {{ request.user.username }}</h1>
     <form action="{% url 'update' %}" method = "post">
         {% csrf_token %} 
         <select name="userdifficulty">
->>>>>>> 15276d7f069a4e407754653eddf50da15ee2775b
         {% for x in difficulty %}
             <option name="{{ x }}">{{ x }}</option>
         {% endfor %}
@@ -25,7 +17,6 @@
         <br>
         <a href= "{% url 'logout' %}">Log Out</a>
     </form>
-
   </center></div>
   <br>
 {% endblock %}

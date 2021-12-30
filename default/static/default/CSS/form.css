@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 15276d7f069a4e407754653eddf50da15ee2775b
 body {
   margin: 0;
   padding: 0;
@@ -12,6 +15,10 @@ body {
 }
 
 form {
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 15276d7f069a4e407754653eddf50da15ee2775b
   width: 40%;
   display: flex;
   justify-content: center;

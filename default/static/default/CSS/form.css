@@ -1,4 +1,4 @@
-/* font-family: 'Inter', sans-serif; */
+
 
 body {
   margin: 0;
@@ -12,7 +12,6 @@ body {
 }
 
 form {
-  /*transform: translateX(70%);*/
   width: 40%;
   display: flex;
   justify-content: center;

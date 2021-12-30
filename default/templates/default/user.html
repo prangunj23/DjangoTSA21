@@ -1,16 +1,21 @@
 {% extends 'default/template.html' %}
 {% block body %}
 
-    <h1>Welcome, {{ request.user.username }}</h1>
+    <div class=".box"><center>
+
     <form action="{% url 'event' %}" method = "post">
-        {% csrf_token %} 
-        <select name="userdifficulty">
+      <h1>Welcome, {{ request.user.username }}</h1>
+        {% csrf_token %}
+        <select class="name" name="userdifficulty">
         {% for x in difficulty %}
             <option name="{{ x }}">{{ x }}</option>
         {% endfor %}
     </select>
-        <input type="submit" value="submit">
+        <button type="submit">Submit</button>
+        <br>
+        <a href= "{% url 'logout' %}">Log Out</a>
     </form>
 
-    <a href= "{% url 'logout' %}">Log Out</a>
+  </center></div>
+  <br>
 {% endblock %}

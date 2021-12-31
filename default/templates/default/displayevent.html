@@ -1,6 +1,16 @@
-{% extends 'default/template.html' %} 
+{% extends 'default/template.html' %}
 {% block body %}
- <h1>Username: {{ username }}</h1>
- <p>Email: {{ email }}</p>
- <p>Level: {{ difficulty }}</p>   
+  <div class="box"><center>
+    <form>
+       <h1>Level: {{ difficulty }}</h1>
+        {% if novice %}
+          <iframe width=600 height=371 src="https://lichess.org/study/embed/OgunAR8K/AfJcgfKp#1" frameborder=0></iframe>
+        {% elif intermediate %}
+          <iframe width=600 height=371 src="https://lichess.org/study/embed/XK12WMME/K8B3j9ku#1" frameborder=0></iframe>
+        {% else %}
+          <iframe width=600 height=371 src="https://lichess.org/study/embed/pfUSmIuj/x4U4e1LZ#0" frameborder=0></iframe>
+        {% endif %}
+    </form>
+  <center</div>
+  <br>
  {% endblock %}

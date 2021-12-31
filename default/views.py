@@ -117,10 +117,22 @@ def updatediff(request):
             entry.difficulty = userdifficulty
             entry.save()
             newevent = Event.objects.filter(username_id=request.user.id)
+            novice = False
+            intermediate = False
+            advanced = False
+            if newevent[0].difficulty == "novice":
+                novice = True
+            elif newevent[0].difficulty == "intermediate":
+                intermediate = True
+            else:
+                advanced = True
             return render(request, "default/displayevent.html", {
                 "username": newevent[0].username.username,
                 "email": newevent[0].email,
                 "difficulty": newevent[0].difficulty,
+                "novice": novice,
+                "intermediate": intermediate,
+                "advanced": advanced
             })
 
 

@@ -20,7 +20,7 @@ def register(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('login')
+            return HttpResponseRedirect(reverse("index"))
 
     else:
 
@@ -78,9 +78,11 @@ def user(request):
         return HttpResponseRedirect("login")
 
 def loginevent(request):
-    return render(request, "default/eventlogin.html", {
-        "difficulty": element
-    })
+    if request.user.is_authenticated:
+        return render(request, "default/eventlogin.html", {
+            "difficulty": element
+        })
+    return HttpResponseRedirect(reverse("login"))
 def event(request):
     if request.user.is_authenticated:
         if request.method == "POST":
@@ -96,12 +98,7 @@ def event(request):
             userdifficulty = request.POST["userdifficulty"]
             event = Event(username=request.user, email=useremail, difficulty=userdifficulty)
             event.save()
-            newevent = Event.objects.filter(username_id=request.user.id)
-            return render(request, "default/displayevent.html", {
-                "username": newevent[0].username.username,
-                "email": newevent[0].email,
-                "difficulty": newevent[0].difficulty,
-            })
+            return HttpResponseRedirect(reverse("present"))
         else:
             return HttpResponseRedirect(reverse("loginevent"))
     else:
@@ -111,11 +108,20 @@ def event(request):
 
 def updatediff(request):
     if request.user.is_authenticated:
-        if request.method == 'POST':
+        if Event.objects.filter(username=request.user).exists():
             userdifficulty = request.POST["userdifficulty"]
             entry = Event.objects.get(username=request.user)
             entry.difficulty = userdifficulty
             entry.save()
+            return HttpResponseRedirect(reverse("present"))
+        else:
+            return HttpResponseRedirect(reverse("event"))
+    else:
+        return HttpResponseRedirect(reverse("login"))
+
+def present(request):
+    if request.user.is_authenticated:
+        if Event.objects.filter(username=request.user).exists():
             newevent = Event.objects.filter(username_id=request.user.id)
             novice = False
             intermediate = False
@@ -126,15 +132,15 @@ def updatediff(request):
                 intermediate = True
             else:
                 advanced = True
-            return render(request, "default/displayevent.html", {
-                "username": newevent[0].username.username,
-                "email": newevent[0].email,
-                "difficulty": newevent[0].difficulty,
-                "novice": novice,
-                "intermediate": intermediate,
-                "advanced": advanced
-            })
 
+            return render(request, "default/displayevent.html", {
+                    "username": newevent[0].username.username,
+                    "email": newevent[0].email,
+                    "difficulty": newevent[0].difficulty,
+                    "novice": novice,
+                    "intermediate": intermediate,
+                    "advanced": advanced
+            })
 
 def puzzles(request):
         return render(request, "default/puzzles.html")

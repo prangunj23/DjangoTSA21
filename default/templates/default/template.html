@@ -66,13 +66,10 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">About</a>
             </li>
-            {% if not existing %}
             <!--- Event -->
             <li class="nav-item">
               <a class="nav-link" href="{% url 'loginevent' %}">Study</a>
             </li>
-            {% else %}
-            {% endif %}
             <!--- Puzzles -->
             <li class="nav-item">
               <a class="nav-link" href="{% url 'puzzles' %}">Puzzles</a>
@@ -88,6 +85,9 @@
             {% if request.user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'user' %}">{{ user.username }}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
               </li>
             {% else %}
               <li class="nav-item">
@@ -135,6 +135,20 @@
               <li class="footerlink">
                 <a href="{% url 'sources' %}" class="footerlink">Sources</a>
               </li>
+              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            </li>
+            {% if request.user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'user' %}">{{ user.username }}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+              </li>
+            {% endif %}
             </ul>
           </div>
 

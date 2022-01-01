@@ -18,5 +18,6 @@ urlpatterns = [
     path('contact', views.contact, name="contact"),
     path('press', views.press, name="press"),
     path('es', views.es, name="es"),
-    path('updatedifficulty', views.updatediff, name="update")
+    path('updatedifficulty', views.updatediff, name="update"),
+    path('presentevent', views.present, name="present")
 ]

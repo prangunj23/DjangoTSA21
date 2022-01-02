@@ -36,9 +36,6 @@ def about(request):
 def sources(request):
     return render(request, "default/sources.html")
 
-def contact(request):
-    return render(request, "default/contact.html")
-
 def press(request):
     return render(request, "default/press.html")
 
@@ -141,12 +138,17 @@ def puzzles(request):
 
 def contact(request):
     if request.method == "POST":
+        word = True
         if request.user.is_authenticated:
             message_name = request.user.username
+        else:
+            message_name = request.POST['message-name']
         if Event.objects.filter(username=request.user).exists():
-            message_email = 
-        message_name = request.POST['message-name']
-        message_email = request.POST['message-email']
+            word = False
+            newevent = Event.objects.filter(username_id=request.user.id)
+            message_email = newevent[0].email
+        else:
+            message_email = request.POST['message-email']
         message = request.POST['message']
         msg_mail = str(message) + "\n\nFrom:" + str(message_name)
 
@@ -159,8 +161,11 @@ def contact(request):
         )
 
 
-        return render(request, 'default/contact.html', {'message_name': message_name,
-                                              'message_email': message_email,
-                                              'message': message})
+        return render(request, 'default/contact.html', {
+            'message_name': message_name,
+            'message_email': message_email,
+            'message': message,
+            'emailexists': name,
+            })
     else:
         return render(request, 'default/contact.html', {})

@@ -135,30 +135,19 @@
               <li class="footerlink">
                 <a href="{% url 'sources' %}" class="footerlink">Sources</a>
               </li>
-<<<<<<< HEAD
               <li class="footerlink">
                 <a href="{% url 'contact' %}" class="footerlink">Contact</a>
               </li>
+            {% if request.user.is_authenticated %}
+              <li class="footerlink">
+                <a href="{% url 'logout' %}" class="footerlink">Logout</a>
+              </li>
+            {% else %}
               <li class="footerlink">
                 <a href="{% url 'login' %}" class="footerlink">Login</a>
               </li>
-=======
-              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-            </li>
-            {% if request.user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'user' %}">{{ user.username }}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-              </li>
-            {% else %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
-              </li>
             {% endif %}
->>>>>>> 4984e13676e63886378809575e6ab8bec36e6051
-            </ul>
+          </ul>
           </div>
 
           <div class="col-6 col-lg-3">

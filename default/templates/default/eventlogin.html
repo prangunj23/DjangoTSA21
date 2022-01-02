@@ -7,8 +7,8 @@
 <form action="{% url 'event' %}" method = "post">
   <h1>Study</h1>
     {% csrf_token %}
-    <input type="text" class="name" name="useremail" placeholder="Email">
-    <select class="email" name="userdifficulty">
+    <input type="email" class="name" name="useremail" placeholder="Email" required>
+    <select class="email" name="userdifficulty" required>
       {% for x in difficulty %}
           <option name="{{ x }}">{{ x }}</option>
       {% endfor %}

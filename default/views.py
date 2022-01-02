@@ -88,13 +88,6 @@ def event(request):
         if request.method == "POST":
 
             useremail = request.POST["useremail"]
-            at = '@'
-            if not at in useremail:
-                return render(request, "default/eventlogin.html", {
-                    "difficulty": element,
-                    "message": "Please input a correct email"
-                })
-
             userdifficulty = request.POST["userdifficulty"]
             event = Event(username=request.user, email=useremail, difficulty=userdifficulty)
             event.save()
@@ -148,6 +141,10 @@ def puzzles(request):
 
 def contact(request):
     if request.method == "POST":
+        if request.user.is_authenticated:
+            message_name = request.user.username
+        if Event.objects.filter(username=request.user).exists():
+            message_email = 
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
         message = request.POST['message']
@@ -160,6 +157,8 @@ def contact(request):
             [settings.EMAIL_HOST_USER],
             fail_silently=False
         )
+
+
         return render(request, 'default/contact.html', {'message_name': message_name,
                                               'message_email': message_email,
                                               'message': message})

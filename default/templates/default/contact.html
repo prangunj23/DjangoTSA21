@@ -5,12 +5,8 @@
           <form method="post">
             <h1>Contact Us</h1>
             {% csrf_token %}
-            {% if not request.user.is_authenticated %}
               <input type="text" name="message-name" class="name" placeholder="Please enter your Name" required>
-            {% endif %}
-            {% if emailexists %}
               <input type="email" name="message-email"class="email" placeholder="Please enter your Email" required>
-            {% endif %}
               <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter a message" required></textarea>
             <button type="submit">Submit</button>
           </form>

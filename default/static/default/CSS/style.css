@@ -861,3 +861,8 @@ body {
     font-size: 4vh !important;
   }
 }
+
+.puzzles {
+  width: 350px !important;
+  height: 560px !important;
+}

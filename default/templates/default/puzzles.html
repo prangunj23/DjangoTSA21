@@ -1,6 +1,12 @@
 {% extends 'default/template.html' %}
   {% block body %}
   <body>
-      <center><iframe style="width: 400px; height: 560px;" src="https://www.chess.com/daily_puzzle" frameborder="0"></iframe></center>
+    <div class="box">
+      <center>
+        <form>
+          <iframe class="puzzles" src="https://www.chess.com/daily_puzzle" frameborder="0"></iframe>
+        </form>
+      </center>
+    </div>
   </body>
 {% endblock %}

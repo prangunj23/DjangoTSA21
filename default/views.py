@@ -160,12 +160,12 @@ def contact(request):
             fail_silently=False
         )
 
-
         return render(request, 'default/contact.html', {
             'message_name': message_name,
             'message_email': message_email,
             'message': message,
-            'emailexists': name,
-            })
+            'emailexists': word,
+        })
+
     else:
         return render(request, 'default/contact.html', {})

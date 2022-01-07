@@ -1,4 +1,6 @@
 {% extends 'default/template.html' %}
+{% load static %}
+
     {% block body %}
     <body>
     <!-- Hero Section -->
@@ -18,7 +20,7 @@
           </div>
 
           <div data-aos="heroimg" data-aos-duration="1600" data-aos-once="true">
-            <div class="col-50 responsivehero"><img src="https://raw.githubusercontent.com/prangunj23/prangunj23.github.io/main/assets/images/medicomm_favicon_270.png" alt="Medicomm Hero Picture" /></div>
+            <div class="col-50 responsivehero"><img style="height: 270px; width: 270px" src="{% static 'default/images/LogoNoPiece.png' %}" alt="Virchess Hero Picture" /></div>
           </div>
         </div>
       </div>
@@ -52,8 +54,6 @@
       <div data-aos="fade-up" data-aos-duration="1400" data-aos-once="true">
         <h2 class="hookdesc">Virchess aims to streamline the game of chess and bring people together from the comfort of their own home.</h2>
       </div>
-      <br>
-      <br>
       <br>
       <br>
       <br>
@@ -158,7 +158,7 @@
                   />
                 </svg>
                 <h1 class="card-title font-weight-bold">About Us</h1>
-                <p class="card-text text-muted">Get to know the team behind medicomm.</p>
+                <p class="card-text text-muted">Get to know the team behind virchess.</p>
               </div>
             </div>
           </div>
@@ -193,7 +193,7 @@
 
     <section id="testimonials" class="testimonials-section">
       <h1 class="testimonialsheading">Testimonials</h1>
-      <h2 class="summarydesc">Our users love us — Here's a snippet of what they have to say about their experience with Medicomm!</h2>
+      <h2 class="summarydesc">Our users love us — Here's a snippet of what they have to say about their experience with Virchess!</h2>
 
       <div class="testimonialcards">
         <div class="container">
@@ -216,8 +216,8 @@
             <div class="ting">
               <div class="card p-1">
                 <div class="card-body">
-                  <p class="card-text">"What they don't tell you really is how great they are - generally speaking, Medicomm is very humble!</p>
-                  <p>I'm grateful to have a platform to share how Medicomm <mark>positively interacts and connects with their customers</mark>"</p>
+                  <p class="card-text">"What they don't tell you really is how great they are - generally speaking, Virchess is very humble!</p>
+                  <p>I'm grateful to have a platform to share how Virchess <mark>positively interacts and connects with their customers</mark>"</p>
                   <footer class="blockquote-footer">
                     <small class="fromwho fromwhosize">
                       Joe Bloggs, partner
@@ -230,7 +230,7 @@
             <!-- 3 -->
             <div class="card p-3 customb">
               <blockquote class="blockquote mb-0 card-body">
-                <p>Without question, Medicomm is arguably <em>thee</em> <mark>best medical telecommunications company</mark> out there, period.</p>
+                <p>Without question, Virchess is arguably <em>thee</em> <mark>best virtual chess platform</mark> out there, period.</p>
                 <footer class="blockquote-footer">
                   <small class="fromwho fromwhosize"> Staci Wigglesbottom, <cite>TIME</cite> </small>
                 </footer>
@@ -268,7 +268,7 @@
             <div class="ting">
               <div class="card p-1">
                 <div class="card-body">
-                  <p class="card-text">"I dont know how they do it, but I can 100% attest to the fact that Medicomm gets the <mark>best experience from their customers</mark>"</p>
+                  <p class="card-text">"I dont know how they do it, but I can 100% attest to the fact that Virchess gets the <mark>best experience from their customers</mark>"</p>
                   <footer class="blockquote-footer">
                     <small class="fromwho fromwhosize">
                       John Q. Public, user
@@ -289,18 +289,18 @@
         <div class="container">
           <div data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
             <h1 class="panelsheader">Frequently Asked Questions</h1>
-            <p>We highly encourage you to familiarize yourself with our FAQ section, so you can get answers to common inquiries regarding Medicomm quickly</p>
+            <p>We highly encourage you to familiarize yourself with our FAQ section, so you can get answers to common inquiries regarding Virchess quickly</p>
             <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
               <div class="accordion" id="faq">
                 <!--- 1 --->
                 <div class="card">
                   <div class="card-header" id="faqhead1">
-                    <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1"> What makes Medicomm better than other companies?</a>
+                    <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1"> What makes Virchess better than other companies?</a>
                   </div>
 
                   <div id="faq1" class="collapse" aria-labelledby="faqhead1">
                     <div class="card-body">
-                      Medicomm &copy; is ranked as the #1 medical telecommunications company <strong>worldwide</strong>. Our team prioritizes alleviating the burden on companies and patients seeking solutions to receive accesible healthcare.
+                      Virchess &copy; is ranked as the #1 virtual chess platform <strong>worldwide</strong>. Our team prioritizes promoting the game of chess through an enhanced user experience and content curtailed based on the need of the user.
                     </div>
                   </div>
                 </div>
@@ -322,13 +322,13 @@
                 <div class="card">
                   <div class="card-header" id="faqhead3">
                     <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq3" aria-expanded="true" aria-controls="faq3">
-                      Will I be contaced repeatedly if I place my contact information in the forms?
+                      What can I actually do on Virchess?
                     </a>
                   </div>
 
                   <div id="faq3" class="collapse" aria-labelledby="faqhead3">
                     <div class="card-body">
-                      Your contact information will only be accessed if there is an issue with your service.
+                      We at Virchess want to provide you with an immersive and engaging experience. This is done by providing study material and resources curtailed to your level of skill. Also, 
                     </div>
                   </div>
                 </div>
@@ -336,7 +336,7 @@
             </div>
 
             <div data-aos="fade" data-aos-duration="2000" data-aos-once="true">
-              <p class="furthermore">Still have questions? <a class="furthermorea" href="https://medicomm.org/contacts/">Get in touch with us</a></p>
+              <p class="furthermore">Still have questions? <a class="furthermorea" href="{% url 'contact' %}">Get in touch with us</a></p>
             </div>
             <!--- End --->
           </div>

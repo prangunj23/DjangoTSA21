@@ -52,7 +52,7 @@ def loginuser(request):
             return HttpResponseRedirect(reverse("index"))
 
         else:
-            return render(request, "default/index.html", {
+            return render(request, "default/login.html", {
                 "message": "Invalid credentials."
             })
     return render(request, "default/login.html")

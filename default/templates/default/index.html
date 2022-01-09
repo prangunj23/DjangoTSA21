@@ -1,4 +1,6 @@
 {% extends 'default/template.html' %}
+{% load static %}
+
     {% block body %}
     <body>
     <!-- Hero Section -->
@@ -18,7 +20,7 @@
           </div>
 
           <div data-aos="heroimg" data-aos-duration="1600" data-aos-once="true">
-            <div class="col-50 responsivehero"><img src="https://raw.githubusercontent.com/prangunj23/prangunj23.github.io/main/assets/images/medicomm_favicon_270.png" alt="Medicomm Hero Picture" /></div>
+            <div class="col-50 responsivehero"><img style="height: 270px; width: 270px" src="{% static 'default/images/LogoNoPiece.png' %}" alt="Virchess Hero Picture" /></div>
           </div>
         </div>
       </div>
@@ -52,8 +54,6 @@
       <div data-aos="fade-up" data-aos-duration="1400" data-aos-once="true">
         <h2 class="hookdesc">Virchess aims to streamline the game of chess and bring people together from the comfort of their own home.</h2>
       </div>
-      <br>
-      <br>
       <br>
       <br>
       <br>

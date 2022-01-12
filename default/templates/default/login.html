@@ -1,7 +1,7 @@
 {% extends 'default/template.html' %}
 {% block body %}
     {% if message %}
-        <script>alert( {{ message }} )</script>
+        <script>alert( message )</script>
     {% endif %}
     <div class="box"><center>
       <form action="{% url 'login' %}" method = "post">

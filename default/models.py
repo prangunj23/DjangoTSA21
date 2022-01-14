@@ -15,7 +15,7 @@ for x in range(len(DIFFICULTY)):
 class Event(models.Model):
     username = models.OneToOneField(User, primary_key=True, on_delete=models.CASCADE)
     email = models.CharField(max_length=64)
-    lichessusername = models.CharField(max_length=64)
+    lichessusername = models.CharField(max_length=64, null=True, blank=True)
     difficulty = models.CharField(max_length=12, choices=DIFFICULTY, default="NOVICE")
 
     def __str__(self):

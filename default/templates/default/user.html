@@ -1,9 +1,11 @@
 {% extends 'default/template.html' %}
+{% load static %}
 {% block body %}
-    <div class=".box"><center>
+    <div class="box"><center>
     <form action="{% url 'update' %}" method = "post">
       <h1>Welcome, {{ request.user.username }}</h1>
         {% csrf_token %}
+        <input type="text" class="name" name="lichess" placeholder="Enter you Lichess username if you have one">
         <select class="email" name="userdifficulty">
         {% for x in difficulty %}
             <option name="{{ x }}">{{ x }}</option>

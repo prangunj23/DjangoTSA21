@@ -1,4 +1,5 @@
 {% extends 'default/template.html' %}
+{% load static %}
 {% block top %}
     <title>Login | Medicomm &copy;</title>
 
@@ -39,8 +40,16 @@
     {% if message %}
         <div>{{ message }} </div>
     {% endif %}
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+      Use your lichess username if you have one
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
     <div class="box"><center>
+
       <form action="{% url 'login' %}" method = "post">
+
         <h1>Login</h1>
         {% csrf_token %}
         <input type="text" class="name" name="username" placeholder="Username" required>

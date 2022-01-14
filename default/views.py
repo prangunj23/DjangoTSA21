@@ -8,6 +8,7 @@ import datetime
 from django.http import request
 from django.core.mail import send_mail
 from django.conf import settings
+from json import dumps
 
 
 # Create your views here.
@@ -83,10 +84,11 @@ def loginevent(request):
 def event(request):
     if request.user.is_authenticated:
         if request.method == "POST":
-
+            
             useremail = request.POST["useremail"]
+            lichessusername = request.POST["lichessusername"]
             userdifficulty = request.POST["userdifficulty"]
-            event = Event(username=request.user, email=useremail, difficulty=userdifficulty)
+            event = Event(username=request.user, email=useremail, lichessusername=lichessusername, difficulty=userdifficulty)
             event.save()
             return HttpResponseRedirect(reverse("present"))
         else:
@@ -100,10 +102,12 @@ def updatediff(request):
     if request.user.is_authenticated:
         if Event.objects.filter(username=request.user).exists():
             userdifficulty = request.POST["userdifficulty"]
+            lichessuser = request.POST["lichess"]
             entry = Event.objects.get(username=request.user)
             entry.difficulty = userdifficulty
+            entry.lichessusername = lichessuser
             entry.save()
-            return HttpResponseRedirect(reverse("present"))
+            return HttpResponseRedirect(reverse("index"))
         else:
             return HttpResponseRedirect(reverse("event"))
     else:
@@ -160,3 +164,27 @@ def contact(request):
 
     else:
         return render(request, 'default/contact.html', {})
+
+def lichess(request):
+    if request.user.is_authenticated:
+        if Event.objects.filter(username=request.user).exists():
+            newevent = Event.objects.filter(username=request.user)
+            lichessuser = newevent[0].lichessusername
+            if not (lichessuser == ""):
+
+                data = {
+                    "username": lichessuser
+                }
+                username = dumps(data)
+                return render(request, "default/lichess.html", {
+                    "username": username
+                })
+            else:
+                return HttpResponseRedirect(reverse('user'))
+        else:
+            return HttpResponseRedirect(reverse('loginevent'))
+    
+    else:
+       return HttpResponseRedirect(reverse('login'))
+
+        

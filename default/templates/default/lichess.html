@@ -36,6 +36,70 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
 {% endblock %} 
 {% block body %} 
+<div class="container px-4 py-5" id="custom-cards">
+	<h2 class="pb-2 border-bottom">Lichess Stats</h2>
+	
+	<div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+	<div onclick="window.location.href='https://lichess.org/training/'" class="col">
+	<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+	<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+	<h2 id="puzzle" class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h2>
+	<ul class="d-flex list-unstyled mt-auto">
+	<li class="me-auto">
+	<img src="{% static 'default/images/lichesslogo.png' %}" alt="Lichess" width="32" height="32" class="rounded-circle border border-white">
+	</li>
+	<li class="d-flex align-items-center me-3">
+	<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+	<small>Lichess</small>
+	</li>
+	<li class="d-flex align-items-center">
+	<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#arrow-right-short"/></svg>
+	<small>(Click Here)</small>
+	</li>
+	</ul>
+	</div>
+	</div>
+	</div>
+    <div onclick="window.location.href='https://lichess.org/rapid/'"class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+        <h2 id="rapid" class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h2>
+        <ul class="d-flex list-unstyled mt-auto">
+        <li class="me-auto">
+        <img src="{% static 'default/images/lichesslogo.png' %}" alt="Lichess" width="32" height="32" class="rounded-circle border border-white">
+        </li>
+        <li class="d-flex align-items-center me-3">
+        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+        <small>Lichess</small>
+        </li>
+        <li class="d-flex align-items-center">
+        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#arrow-right-short"/></svg>
+        <small>(Click Here)</small>
+        </li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        <div onclick="window.location.href='https://lichess.org/classical'" class="col">
+            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 id="classical" class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h2>
+            <ul class="d-flex list-unstyled mt-auto">
+            <li class="me-auto">
+            <img src="{% static 'default/images/lichesslogo.png' %}" alt="Lichess" width="32" height="32" class="rounded-circle border border-white">
+            </li>
+            <li class="d-flex align-items-center me-3">
+            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+            <small>Lichess</small>
+            </li>
+            <li class="d-flex align-items-center">
+            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#arrow-right-short"/></svg>
+            <small>(Click Here)</small>
+            </li>
+            </ul>
+            </div>
+            </div>
+            </div>
 <script>
     var input = JSON.parse("{{username|escapejs}}");
     var name = input.username
@@ -43,7 +107,28 @@
         fetch("https://lichess.org/api/user/" + name)
         .then(response => response.json())
         .then(data => {
-            console.log(data.perfs.puzzle.rating)
+            var puzzlesoutput;
+            var rapidoutput;
+            var classicaloutput;
+            if (data.perfs.puzzle.games == 0) {
+                puzzlesoutput = "No Puzzles Attempted";
+            } else {
+                puzzlesoutput = "Puzzle Rating: " + data.perfs.puzzle.rating;
+            }
+            if (data.perfs.rapid.games == 0) {
+                rapidoutput = "No Rapid Games Played";
+            } else {
+                rapidoutput = "Rapid Rating: " + data.perfs.rapid.rating;
+            }
+            if (data.perfs.classical.games == 0) {
+                classicaloutput = "No Classical Games Played";
+            } else {
+                classicaloutput = "Classical Output: " + data.perfs.classical.rating;
+            }
+            document.querySelector('#puzzle').innerHTML = puzzlesoutput;
+            document.querySelector('#rapid').innerHTML = rapidoutput;
+            document.querySelector('#classical').innerHTML = classicaloutput;
+
         })
     })
 </script>

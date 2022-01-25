@@ -11,7 +11,7 @@
  <header>
     <!-- Announcement bar-->
     <div class="announcement">
-      <p><span class="badge badge-secondary">New</span> Virtual sessions with therapists are now available! 🎉</p>
+      <p><span class="badge badge-secondary">New</span> Connectivity with Lichess information 🎉</p>
     </div>
     <!--Navigation bar-->
     <nav class="nav-menu-top navbar navbar-expand-lg navbar-light bg-white">
@@ -45,10 +45,6 @@
             <!-- Lichess -->
             <li class="nav-item">
               <a class="nav-link" href="{% url 'lichess' %}">Lichess</a>
-            </li>
-            <!--- Sources --->
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'sources' %}">Sources</a>
             </li>
             <!--- Contact -->
             <li class="nav-item">
@@ -105,9 +101,6 @@
                 <a href="{% url 'puzzles' %}"class="footerlink">Puzzles</a>
               </li>
               <li class="footerlink">
-                <a href="{% url 'sources' %}" class="footerlink">Sources</a>
-              </li>
-              <li class="footerlink">
                 <a href="{% url 'contact' %}" class="footerlink">Contact</a>
               </li>
             {% if request.user.is_authenticated %}
@@ -130,19 +123,9 @@
                 <a href="{% url 'contact' %}" class="footerlink">Contact</a>
               </li>
 
-              <li class="footerlink">
-                <a href="{% url 'press' %}" class="footerlink">Press</a>
-              </li>
-
-              <li class="footerlink">
-                <a href="{% url 'es' %}" class="footerlink">Español</a>
-              </li>
+              
             </ul>
           </div>
-        </div>
-        <div class="socialmedia">
-        <a href="https://www.facebook.com/medi.comm.98" class="fa fa-facebook"></a>
-        <a href="https://www.instagram.com/med1comm123/" class="fa fa-instagram"></a>
         </div>
         <div class="row justify-content-center">
           <div class="col col-md-auto text-center">
@@ -212,6 +195,6 @@
       maxTilt: 00,
     });
   </script>
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9468795.js"></script>
+  
 </body>
 </html>

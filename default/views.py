@@ -90,10 +90,10 @@ def loginevent(request):
             else:
                 advanced = True
             return render(request, "default/displayevent.html", {
-                "difficulty": diff
-                "novice": novice
-                "intermediate": intermediate
-                "advanced": advanced
+                "difficulty": diff,
+                "novice": novice,
+                "intermediate": intermediate,
+                "advanced": advanced,
             })
         else:
             return render(request, "default/eventlogin.html", {

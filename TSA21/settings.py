@@ -27,11 +27,8 @@ SECRET_KEY = 'yy#=lgqq2u)t)9+^oy$po3!-5$xs(03&3olv)vuq(v12d%*g$r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = ['https://virtevent.herokuapp.com/']
-=======
 ALLOWED_HOSTS = []
->>>>>>> parent of e988240 (updated 404)
+
 
 
 # Application definition

@@ -77,10 +77,30 @@ def user(request):
 
 def loginevent(request):
     if request.user.is_authenticated:
-        return render(request, "default/eventlogin.html", {
-            "difficulty": element
-        })
-    return HttpResponseRedirect(reverse("login"))
+        if Event.objects.filter(username=request.user).exists():
+            newevent = Event.objects.filter(username_id=request.user.id)
+            diff = newevent[0].difficulty
+            novice = False
+            intermediate = False
+            advanced = False
+            if element == "novice":
+                novice = True
+            elif element == "intermediate":
+                intermediate = True
+            else:
+                advanced = True
+            return render(request, "default/displayevent.html", {
+                "difficulty": diff,
+                "novice": novice,
+                "intermediate": intermediate,
+                "advanced": advanced,
+            })
+        else:
+            return render(request, "default/eventlogin.html", {
+                "difficulty": element
+            })
+    else: 
+        return HttpResponseRedirect(reverse("login"))
 def event(request):
     if request.user.is_authenticated:
         if request.method == "POST":

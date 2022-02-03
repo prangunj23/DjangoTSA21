@@ -1,14 +1,7 @@
-# DjangoTSA21
-
-Notes
-- File directory names for website pages must be in **lowercase**
-- The files are create by django. There is no need to change them from upper to lowercase.
-- Discuss use of login and how to make it efficient
-- Admin User: pranit
-- Password: password
-- Testing Users
-- Users: test1, test2
-- Password: laoo,rpe23, aPassWord23
-- Email: virchess123@gmail.com
-- Password: 0ct0pus!23
-
+# TSA21
+- To-do
+  - [ ] Fix the presentevent view
+  - [ ] Update the theme of the entire site
+  - [ ] Onscroll animations
+  - [ ] Works Cited
+  - [ ] Plan of Work Log

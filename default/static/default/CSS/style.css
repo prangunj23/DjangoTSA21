@@ -53,7 +53,7 @@ body {
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 15px;
   font-weight: 400;
 }
@@ -71,14 +71,14 @@ body {
   padding-top: 25px;
 }
 .nav-item .nav-link {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 16px;
   background-color: transparent;
   padding-bottom: calc(1px * 2);
   position: relative;
   transition: 0.3s ease;
-  cursor: pointer;
+  cursor: poRaleway;
   border-color: rgba(0, 0, 0, 0);
 }
 .nav-item .nav-link::after {
@@ -110,7 +110,7 @@ body {
   width: 100% !important;
 }
 .heroheader {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 900 !important;
   color: rgb(33, 37, 41);
   display: block;
@@ -125,7 +125,7 @@ body {
   display: inline;
 }
 .herocontent {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 400 !important;
   color: rgb(85, 85, 85);
   display: block;
@@ -162,7 +162,7 @@ body {
   width: 100% !important;
 }
 .hookheader {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 900 !important;
   font-size: 46px;
   color: #fff;
@@ -175,7 +175,7 @@ body {
   vertical-align: middle;
 }
 .hookdesc {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 400 !important;
   font-size: 16px;
   color: #fff;
@@ -190,7 +190,7 @@ body {
 }
 /** Fast Facts Section **/
 .fastfacts-section {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   height: auto !important;
   background-color: #fafbfc;
   width: 100% !important;
@@ -211,7 +211,7 @@ body {
   line-height: 57.75px;
 }
 .fastfactsdesc {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 400 !important;
   font-size: 16px;
   color: rgb(33, 37, 41);
@@ -236,7 +236,7 @@ body {
 }
 .statdesc {
   padding-top: 35px;
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 300 !important;
   font-size: 16px;
   color: rgb(33, 37, 41);
@@ -248,7 +248,7 @@ body {
 }
 /*** Summary Section ***/
 .summary-section {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   height: auto;
   width: 100% !important;
   margin: auto;
@@ -257,7 +257,7 @@ body {
   padding-bottom: 15px;
 }
 .content-summary-section {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   height: auto;
   width: 100% !important;
   margin: auto;
@@ -278,7 +278,7 @@ body {
   line-height: 57.75px;
 }
 .summarydesc {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 400 !important;
   font-size: 16px;
   color: rgb(33, 37, 41);
@@ -312,7 +312,7 @@ body {
 .card-hover:hover {
   background-color: #6479c3 !important;
   color: white !important;
-  cursor: pointer !important;
+  cursor: poRaleway !important;
 }
 /* Subtext changes on card hover */
 .card-hover:hover .text-muted {
@@ -329,7 +329,7 @@ body {
   background-color: #fafbfc;
 }
 .statement {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 900 !important;
   font-size: 38px;
   color: rgb(33, 37, 41);
@@ -390,7 +390,7 @@ body {
 }
 
 .testimonials-section {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   height: auto;
   width: 100% !important;
   margin: auto;
@@ -439,7 +439,7 @@ body {
   }
 /** FAQ Section **/
 .panels {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   height: auto;
   width: 100% !important;
   padding-top: 25px;
@@ -483,7 +483,7 @@ body {
 }
 #main #faq .card .card-header .btn-header-link::after {
   content: "-";
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
   float: right;
   color: #3755be;
@@ -535,7 +535,7 @@ body {
 }
 /*** Footer Section ***/
 .footer-section {
-  font-family: "Inter", sans-serif !important;
+  font-family: "Raleway", sans-serif !important;
   height: auto;
   padding-top: 100px;
   background: #3755be;
@@ -543,17 +543,17 @@ body {
   width: 100% !important;
 }
 .fsubhead {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 1.15em;
   border-bottom: 2px solid #6b8cff;
   display: inline-block;
   padding-bottom: 10px;
 }
 .footerlink {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 16px;
-  cursor: pointer;
+  cursor: poRaleway;
   color: #ccdceb !important;
   transition: 0.3s;
 }
@@ -620,7 +620,7 @@ body {
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 15px;
   font-weight: 400;
 }

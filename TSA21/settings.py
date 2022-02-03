@@ -27,6 +27,7 @@ SECRET_KEY = 'yy#=lgqq2u)t)9+^oy$po3!-5$xs(03&3olv)vuq(v12d%*g$r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+
 ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'https://virtevent.herokuapp.com/']
 
 

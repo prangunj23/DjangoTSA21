@@ -1,4 +1,5 @@
 from django.urls import path
+
 from . import views
 
 
@@ -18,6 +19,6 @@ urlpatterns = [
     path('press', views.press, name="press"),
     path('es', views.es, name="es"),
     path('updatedifficulty', views.updatediff, name="update"),
-    path('presentevent', views.present, name="present"),
+    path('presentevent', views.present, name="present"), 
     path('lichess', views.lichess, name="lichess")
 ]

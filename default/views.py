@@ -99,12 +99,12 @@ def loginevent(request):
             return render(request, "default/eventlogin.html", {
                 "difficulty": element
             })
-    else: 
+    else:
         return HttpResponseRedirect(reverse("login"))
 def event(request):
     if request.user.is_authenticated:
         if request.method == "POST":
-            
+
             useremail = request.POST["useremail"]
             lichessusername = request.POST["lichessusername"]
             userdifficulty = request.POST["userdifficulty"]
@@ -179,7 +179,7 @@ def contact(request):
             'message_name': message_name,
             'message_email': message_email,
             'message': message,
-            
+
         })
 
     else:
@@ -203,8 +203,9 @@ def lichess(request):
                 return HttpResponseRedirect(reverse('user'))
         else:
             return HttpResponseRedirect(reverse('loginevent'))
-    
+
     else:
        return HttpResponseRedirect(reverse('login'))
 
-        
+def handler404(request, exception):
+    return render(request, 'default/404.html', status=404)

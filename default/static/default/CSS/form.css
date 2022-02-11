@@ -56,3 +56,8 @@ form {
 button:hover {
   background-color: #03378c;
 }
+@media (max-width: 768px) {
+  .button {
+    width: 25%;
+  }
+}

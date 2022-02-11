@@ -49,15 +49,10 @@ form {
   color: #ffffff;
   transition: 0.3s;
   border: none;
-  width: 90%;
+  width: 40%;
   border-radius: 20px;
 }
 
 button:hover {
   background-color: #03378c;
-}
-@media (max-width: 768px) {
-  .button {
-    width: 25%;
-  }
 }

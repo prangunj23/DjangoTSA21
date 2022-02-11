@@ -40,7 +40,7 @@ form {
   resize: none;
 }
 
-button {
+.button {
   margin-top: 20px;
   padding: 10px 180px;
   font-size: 14px;

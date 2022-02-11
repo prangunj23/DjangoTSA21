@@ -51,7 +51,7 @@
         {% csrf_token %}
         <input type="text" class="name" name="username" placeholder="Username" required>
         <input type="password" class="name" name="password" placeholder="Password" required>
-        <button type="submit">Login</button>
+        <button class="button" type="submit">Login</button>
         <br>
         <p class="text">Not a memeber yet? <a href="{% url 'register' %}">Sign Up</a></p>
       </form>

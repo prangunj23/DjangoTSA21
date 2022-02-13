@@ -42,6 +42,7 @@ form {
 
 .button {
   margin-top: 20px;
+  display: flex;
   padding: 10px 180px;
   font-size: 14px;
   font-family: 'Inter', sans-serif;
@@ -55,9 +56,4 @@ form {
 
 button:hover {
   background-color: #03378c;
-}
-@media (max-width: 1400px) {
-  .button {
-    width: 25%;
-  }
 }

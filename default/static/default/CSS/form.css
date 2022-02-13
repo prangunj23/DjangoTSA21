@@ -46,7 +46,7 @@ form {
   display: flex;
   padding: 10px 180px;
   font-size: 14px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-color: #0645ad;
   color: #ffffff;
   transition: 0.3s;
@@ -54,7 +54,10 @@ form {
   
   border-radius: 20px;
 }
-
+@media (max-width: 480px) {
+  width: 25%;
+  display: flex;
+}
 button:hover {
   background-color: #03378c;
 }

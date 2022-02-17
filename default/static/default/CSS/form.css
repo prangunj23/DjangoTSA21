@@ -59,7 +59,9 @@ form {
 }
 @media (max-width: 480px) {
   .button {
-    display: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 button:hover {

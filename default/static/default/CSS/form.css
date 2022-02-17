@@ -57,10 +57,9 @@ form {
   
   border-radius: 20px;
 }
-@media (min-width: 480px) {
+@media (max-width: 480px) {
   .button {
-    width: 25%;
-    display: flex;
+    display: none;
   }
 }
 button:hover {

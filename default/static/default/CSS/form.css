@@ -41,6 +41,7 @@ form {
 }
 
 .button {
+  margin-top: 20px;
   width: 40%;
   display: flex;
   justify-content: center;

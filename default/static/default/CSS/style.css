@@ -140,6 +140,11 @@ body {
   margin-right: 10%;
   margin-left: 75%;
 }
+@media (max-width: 768px) {
+  .button_cont {
+     margin-top: 50%;
+ }
+}
 .custom-shape-divider-bottom-1611762507 {
   position: relative;
   bottom: 0;

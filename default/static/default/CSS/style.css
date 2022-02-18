@@ -135,6 +135,11 @@ body {
   height: 96px;
   width: 686px;
 }
+.button_cont {
+  margin-top: -250px;
+  margin-right: 150px;
+  margin-left: 750px;
+}
 .custom-shape-divider-bottom-1611762507 {
   position: relative;
   bottom: 0;

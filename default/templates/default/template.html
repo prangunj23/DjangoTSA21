@@ -33,10 +33,6 @@
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
             </li>
-            <!-- About Us -->
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About</a>
-            </li>
             <!--- Event -->
             <li class="nav-item">
               <a class="nav-link" href="{% url 'loginevent' %}">Study</a>
@@ -48,10 +44,6 @@
             <!-- Lichess -->
             <li class="nav-item">
               <a class="nav-link" href="{% url 'lichess' %}">Lichess</a>
-            </li>
-            <!--- Contact -->
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
             </li>
             {% if request.user.is_authenticated %}
               <li class="nav-item">
@@ -93,9 +85,6 @@
             <ul class="nav flex-column">
               <li class="footerlink">
                 <a href="{% url 'index' %}" class="footerlink">Home</a>
-              </li>
-              <li class="footerlink">
-                <a href="{% url 'about' %}" class="footerlink">About</a>
               </li>
               <li class="footerlink">
                 <a href="{% url 'event' %}" class="footerlink">Study</a>

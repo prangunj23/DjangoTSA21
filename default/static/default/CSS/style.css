@@ -142,7 +142,7 @@ body {
 }
 @media (max-width: 768px) {
   .button_cont {
-     margin-top: 50%;
+     display: none;
  }
 }
 .custom-shape-divider-bottom-1611762507 {

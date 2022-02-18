@@ -31,17 +31,6 @@ def register(request):
 def index(request):
     return render(request, "default/index.html")
 
-def about(request):
-    return render(request, "default/about.html")
-
-def sources(request):
-    return render(request, "default/sources.html")
-
-def press(request):
-    return render(request, "default/press.html")
-
-def es(request):
-    return render(request, "default/es.html")
 
 def loginuser(request):
     if request.method == "POST":

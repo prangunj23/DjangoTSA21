@@ -154,12 +154,12 @@ def contact(request):
         message_email = request.POST['message-email']
         message_name = request.POST['message-name']
         message = request.POST['message']
-        msg_mail = str(message) + "\n\nFrom:" + str(message_name)
+        
 
         send_mail(
-            msg_mail,
-            message_email,
-            [settings.EMAIL_HOST_USER],
+            message_name,
+            message,
+            "virchess123@gmail.com",
             [message_email],
             fail_silently=False
         )

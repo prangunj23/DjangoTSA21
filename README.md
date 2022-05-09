@@ -1,7 +1,6 @@
 # TSA21
 - To-do
-  - [ ] Fix the presentevent view
-  - [ ] Update the theme of the entire site
-  - [ ] Onscroll animations
-  - [ ] Works Cited
-  - [ ] Plan of Work Log
+  - [ ] Fix signup page
+  - [ ] Use user login for contact
+  - [ ] Create a message sent/success for contact
+ 

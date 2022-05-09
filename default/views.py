@@ -157,10 +157,10 @@ def contact(request):
         msg_mail = str(message) + "\n\nFrom:" + str(message_name)
 
         send_mail(
-            str(message_email),
             msg_mail,
             message_email,
             [settings.EMAIL_HOST_USER],
+            [message_email],
             fail_silently=False
         )
 

@@ -9,23 +9,24 @@ from django.http import request
 from django.core.mail import send_mail
 from django.conf import settings
 from json import dumps
+from .forms import RegisterUserForm
 
 
 # Create your views here.
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegisterUserForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
             login(request, user)
+            messages.success(request, ("Registration Successful!"))
             return HttpResponseRedirect(reverse("index"))
 
     else:
-
-            form = UserCreationForm()
+            form = RegisterUserForm()
     return render(request, "default/register.html", {'form': form})
 
 def index(request):

@@ -160,8 +160,8 @@ def contact(request):
         send_mail(
             message_name,
             message,
-            "virchess123@gmail.com",
             [message_email],
+            "virchess123@gmail.com",
             fail_silently=False
         )
 

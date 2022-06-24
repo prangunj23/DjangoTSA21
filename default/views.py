@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import Event, element, DIFFICULTY
@@ -74,9 +73,9 @@ def loginevent(request):
             novice = False
             intermediate = False
             advanced = False
-            if element == "novice":
+            if diff == "novice":
                 novice = True
-            elif element == "intermediate":
+            elif diff == "intermediate":
                 intermediate = True
             else:
                 advanced = True

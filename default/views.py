@@ -158,17 +158,18 @@ def contact(request):
         
 
         send_mail(
-            message_name,
+            message_email,
             message,
             "virchess123@gmail.com",
-            [message_email],
+            ["virchess123@gmail.com"],
             fail_silently=False
         )
 
         return render(request, 'default/contact.html', {
-            'message_name': message_name,
-            'message_email': message_email,
-            'message': message,
+            "message_name": message_name,
+            "message_email": message_email,
+            "message": message,
+            "sent": "Message Sent"
 
         })
 

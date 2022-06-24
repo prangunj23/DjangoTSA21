@@ -10,6 +10,7 @@ body {
 }
 
 form {
+  /*
   width: 40%;
   display: flex;
   /* justify-content: center;
@@ -20,6 +21,7 @@ form {
   border-radius: 20px;
   box-shadow: 10px 10px 5px 5px #0645ad;
   background-color: #ffffff;
+  */
 }
 
 .name, .email, #message {

@@ -1,6 +1,3 @@
 # TSA21
-- To-do
-  - [ ] Fix signup page
-  - [ ] Use user login for contact
-  - [ ] Create a message sent/success for contact
+- Note: Deployment has been discontinued as it requires upgrading to a premium service provided by heroku.
  
